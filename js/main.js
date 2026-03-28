@@ -399,4 +399,22 @@
     }
   })();
 
+
+  // =============================================
+  // 14. NEWSLETTER -> WHATSAPP
+  // =============================================
+  (function() {
+    var form = document.getElementById('newsletterForm');
+    if (!form) return;
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var input = form.querySelector('input[type="email"]');
+      if (!input || !input.value) return;
+      var email = input.value.trim();
+      var message = 'Hola, quiero suscribirme al newsletter de CTIME. Mi email es: ' + email;
+      window.open('https://wa.me/595981000000?text=' + encodeURIComponent(message), '_blank', 'noopener');
+      input.value = '';
+    });
+  })();
+
 })();
